@@ -32,3 +32,10 @@ def recreate():
         db.drop_all()
         db.create_all()
         print 'Database re-created'
+
+@manager.command
+def prepopulate():
+    print 'Connected to {}'.format(repr(db.engine.url))
+    if prompt_bool("Are you sure you want to prepopulate the database?"):
+        from .prepopulate import prepopulate_data
+        prepopulate_data(db.session)

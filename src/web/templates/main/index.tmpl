@@ -6,4 +6,10 @@
   {% else %}
       <p>Please login</p>
   {% endif %}
+  {% for user in users %}
+    <li>
+      Name: {{ user.username }}
+      Bio: {{ user.bio }}
+    </li>
+  {% endfor %}
 {% endblock %}
