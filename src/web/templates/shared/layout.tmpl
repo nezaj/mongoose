@@ -1,14 +1,11 @@
-{% macro emit_css(bundle) %}
-  {% assets bundle %}
-    <link rel="stylesheet" href="{{ ASSETS_URL }}">
-  {% endassets %}
-{% endmacro %}
-
 <!DOCTYPE html>
 <html>
   <head>
     <title>{% block title %}{% endblock %} - Flask App</title>
-    {{ emit_css("css_all") }}
+
+    <!-- Load CSS, fix this later to use flask-assets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
     {% block styles %}
       {# template-specific styles which are not included in bundle go here #}
     {% endblock %}

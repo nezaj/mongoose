@@ -8,8 +8,8 @@ CSS_ASSETS = [
 def register_assets(app):
     assets = Environment(app)
     assets.debug = app.debug
-    assets.auto_build = True
     assets.url = app.static_url_path
+    assets.auto_build = True
 
     css = Bundle(*CSS_ASSETS, filters='cssmin', output='css/bundle.min.css')
 
