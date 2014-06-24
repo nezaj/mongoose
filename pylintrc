@@ -25,6 +25,7 @@ persistent=no
 # --disable=W"
 
 # C0111: Missing module docstring -- complains too much (e.g. empty "__init__.py")
+# E1103: Instance has no member -- complains too much with SQLAlchemy
 # E1103: Instance has no member (but some types could not be inferred) -- does not play nice with requests
 # E1120: No value for argument in constructor -- doesn't play nice with some SQLAlchemy types (e.g. Boolean)
 # I0011: Locally disabling -- I disabled for a reason
@@ -36,7 +37,7 @@ persistent=no
 # W0511: TODO/FIXME/XXX -- I think it is reasonable to include these and get to them later
 # W0621: Redifining name from outer scope -- Not neccesarily bad style
 
-disable=C0111,E1103,E1120,I0011,R0401,R0903,R0904,W0142,W0232,W0511,W0621
+disable=C0111,E1101,E1103,E1120,I0011,R0401,R0903,R0904,W0142,W0232,W0511,W0621
 
 
 [REPORTS]

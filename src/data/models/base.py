@@ -12,7 +12,7 @@ class BaseModel(object):
     @classmethod
     def columns(cls):
         "Returns all the columns on this model class."
-        return cls.__table__.columns  # pylint: disable=E1101
+        return cls.__table__.columns
 
     def _is_loaded(self, attr):
         "Whether an attribute on a model is loaded and unexpired."

@@ -29,4 +29,4 @@ def logout():
 
 @login_manager.user_loader
 def load_user(userid):
-    return db.session.query(User).get(int(userid))  # pylint: disable=E1101
+    return db.session.query(User).get(int(userid))
