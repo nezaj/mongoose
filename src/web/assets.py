@@ -11,8 +11,8 @@ def register_assets(app):
     assets.url = app.static_url_path
     assets.auto_build = True
 
-    css = Bundle(*CSS_ASSETS, filters='cssmin', output='css/bundle.min.css')
+    css_all = Bundle(*CSS_ASSETS, filters='cssmin', output='css/bundle.min.css')
 
-    assets.register('css_all', css)
+    assets.register('css_all', css_all)
     app.logger.info("Registered assets...")
     return assets
